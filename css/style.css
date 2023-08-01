@@ -1,0 +1,75 @@
+/* Reset default margin and padding */
+body, h1, h3, p {
+  margin: 0;
+  padding: 0;
+}
+
+/* Set font family and font sizes (optional) */
+body {
+  font-family: "Arial", sans-serif;
+}
+
+h1 {
+  font-size: 1.75rem;
+}
+
+.item-title {
+  font-size: 1.15rem;
+}
+
+/* Container styles */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.menu-title {
+  text-align: center;
+  font-size: 1.75rem;
+  padding-bottom: 16px;
+}
+
+/* Grid layout styles */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+/* Item styles */
+.item {
+  position: relative;
+  background-color: gray;
+  border: 1px solid black;
+  padding: 40px 20px 5px;
+  box-sizing: border-box; /* Ensure padding and border don't affect item width */
+}
+
+/* Item title styles */
+.item-title {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 5px 30px;
+  border: 1px solid black;
+  box-sizing: border-box; /* Ensure padding and border don't affect title region width */
+}
+
+/* Media queries for responsive layout */
+/* Tablet view (768px to 991px) */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .item:nth-child(3) {
+    grid-row: 2; /* The 3rd section takes up the entire row in tablet view */
+  }
+}
+
+/* Mobile view (less than or equal to 767px) */
+@media only screen and (max-width: 767px) {
+  .grid-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
